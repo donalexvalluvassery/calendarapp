@@ -15,7 +15,7 @@ ADD src src
 RUN mvn package -DskipTests
 RUN echo "done!"
 
-# 2nd stage, build the runtime image
+# 2nd stage, build the runtime images
 FROM openjdk:11-jre-slim
 WORKDIR /helidon
 
