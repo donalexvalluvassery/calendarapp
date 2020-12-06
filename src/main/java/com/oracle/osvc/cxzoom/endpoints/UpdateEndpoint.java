@@ -62,8 +62,7 @@ public class UpdateEndpoint {
 
     @GET
     public Response fetchUserType(@QueryParam("date") Timestamp time,@QueryParam("meetid") String meetid){
-        getChangeSchedule().changeSchedule(time,meetid);
-        return Response.ok().build();
+        return Response.ok(getChangeSchedule().changeSchedule(time,meetid)).build();
     }
 
 }
