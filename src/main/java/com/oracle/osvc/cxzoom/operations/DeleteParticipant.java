@@ -19,11 +19,12 @@ public class DeleteParticipant {
     public void setDbUtils(DbUtils dbUtils) {
         this.dbUtils = dbUtils;
     }
-    public String deleteUser(String uname){
+    public String deleteUser(String uname, String meetid){
         try{
             Connection con= getDbUtils().createConnection();
-            PreparedStatement ps=con.prepareStatement("delete from participants where username=?");
+            PreparedStatement ps=con.prepareStatement("delete from participants where username=? and id=?");
             ps.setString(1,uname);
+            ps.setString(2,meetid);
             System.out.println(uname);
             ps.executeUpdate();
             con.close();
