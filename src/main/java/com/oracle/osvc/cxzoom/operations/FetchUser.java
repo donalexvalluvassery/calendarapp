@@ -32,7 +32,7 @@ public class FetchUser {
             ResultSet rs=ps.executeQuery();
 
 
-            if(rs.next() && !StringUtils.isNullOrEmpty(user.getUserName())) {
+            if (rs.next() && !StringUtils.isNullOrEmpty(user.getUserName())) {
                 user.setFirstName(rs.getString(1));
                 user.setLastName(rs.getString(2));
                 user.setEmail(rs.getString(3));

@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import java.sql.Timestamp;
 
@@ -32,9 +33,10 @@ public class UpdateEndpoint {
     }
 
     @DELETE
-    public Response deleteParticipant(String uname){
-        String[] arr= uname.split("=",2);
-        getDeleteParticipant().deleteUser(arr[1]);
+    public Response deleteParticipant(JSONObject data){
+        String uname = (String) data.get("userName");
+        String meetid = (String) data.get("meetId");
+        getDeleteParticipant().deleteUser(uname,meetid);
         return Response.ok().build();
     }
 
