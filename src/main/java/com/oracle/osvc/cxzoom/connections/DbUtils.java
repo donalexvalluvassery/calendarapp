@@ -11,7 +11,7 @@ public class DbUtils {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
-                    "jdbc:mysql://10.0.0.1:3306/calendar", "root", "hydrogen");
+                    "jdbc:mysql://localhost:3306/calendar", "root", "hydrogen");
         }catch (Exception e){
             System.out.println(e);
         }
