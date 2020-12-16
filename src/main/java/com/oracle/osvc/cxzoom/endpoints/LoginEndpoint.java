@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 public class LoginEndpoint {
     @OPTIONS
     @CrossOrigin(
-            value = {"http://localhost:8000"},
+            value = {"http://152.67.161.137:8000"},
             allowMethods = {HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.POST})
     public void optionsForGreeting() {
 

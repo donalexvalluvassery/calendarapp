@@ -18,7 +18,7 @@ import java.util.List;
 public class MeetingsEndpoint {
     @OPTIONS
     @CrossOrigin(
-            value = {"http://localhost:8000"},
+            value = {"http://152.67.161.137:8000"},
             allowMethods = {HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.POST, HttpMethod.GET})
     public void optionsForGreeting() {
 
