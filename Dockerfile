@@ -19,7 +19,7 @@ RUN echo "done!"
 FROM openjdk:11-jre-slim
 WORKDIR /helidon
 
-# Copy the binary built in the 1st stage
+# Copy the binary built in the 1st stages
 COPY --from=build /helidon/target/helidon-quickstart-mp.jar ./
 COPY --from=build /helidon/target/libs ./libs
 
